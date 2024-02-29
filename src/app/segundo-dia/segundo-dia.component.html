@@ -1,0 +1,160 @@
+
+  <button class="btn btn-primary" (click)="clickButton('success')">Aplicar </button>
+
+<div *ngIf="variable">
+  <hr>
+  <div>
+    <h3>Botón usando ngIf</h3>
+    <button class="btn btn-success">Aparecio</button>
+  </div>
+</div>
+<br>
+<hr>
+
+<div>
+  <h3>Botón usando class</h3>
+  <button class="btn btn-success" *ngIf="variable === 'success'" (click)="summitfrom()">Submit</button>
+</div>
+<br>
+<hr>
+
+<div>
+  <h3>Botón Utilizando ngClass</h3>
+  <button class="btn" [ngClass]="{'btn-success': variable === 'success'}"(click)="clickButton('success')">success</button>
+</div>
+<br>
+<hr>
+
+<div>
+  <h3>Botón utilizando operador ternario</h3>
+  <button [class]="variable === 'success' ? 'btn btn-success' : 'btn btn-danger'"(click)="clickButton('success')">{{ variable }}</button>
+</div>
+
+
+<div *ngIf="variable === 'hola soy nueva variable'">{{variable}}</div>
+<br><br>
+<hr>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr *ngFor="let itemuser of user">
+       
+        <td>{{itemuser.name}}</td>
+        <td>{{itemuser.desipcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+<br>
+<hr>
+  <h1>INPUTS NO REACITVOS</h1>
+  <span>Nombre</span>
+  <input 
+    type="text" 
+    [(ngModel)]="name"
+    
+  >
+
+  <span>Descripción</span>
+  <input 
+    type="text" 
+    [(ngModel)]="descripcion"
+ 
+  >
+
+  <div class="card bg-dark text-white">
+   <h3>{{name}}</h3>
+   <div class="card-body">
+           <small>{{descripcion}}</small>
+   </div>
+  </div>
+ <button
+     class="btn btn-success"
+     (click)="summitfrom()"
+      
+ >
+   Mostrar los valores en consola
+</button>
+<br>
+<hr>
+<p><h1>INPUTS REACTIVOS</h1>
+      <form [formGroup]="formularioUser">
+        <span>Nombre</span>
+        <input
+          type="text"
+          formControlName="name"
+        >
+        <span>Descripción</span>
+        <input
+          type="text"
+          formControlName="descripcion"
+        >
+        <button
+          class="btn btn-success"
+          (click)="summitfrom()"
+        >
+          Submit
+        </button>
+    </form> 
+  
+    
+
+
+
+
+
+
+  <!--<h1>
+    <input type="text" class="from-control" [(ngMode)]] ="variable">
+  </h1>-->
+  
+
+<!----  <from [fromGroup]="formularioUser">
+    <span> nombre</span>
+
+
+    <input 
+    type="text"
+    formControl="Nombre"
+    >
+boton usando ngif
+  utilizando una clas con una variables
+  utlizando con ngClass
+  Boton utlzando operador terrnario
+
+<div *ngif="variable === 'success'">
+    
+
+    {{variable}}
+
+
+</div>
+
+
+<div *ngif="variable === 'hola mundo '">
+    hola mundo3
+
+    {{variable}}
+
+
+
+
+{{variable}}
+
+</button>--
+
+
+
+
+
+<p>hola</p>
+<span> descripcion</span>
+    <input type="text" class="from-control" [[(ngMode)]] ="variable">
+</from>-->
